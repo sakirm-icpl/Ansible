@@ -1,6 +1,7 @@
 ---
 - name: Install Nginx on Ubuntu
   hosts: all
+  become: yes
   tasks:
     - name: Install python3-apt package if missing
       apt:
