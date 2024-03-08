@@ -2,7 +2,6 @@
 - name: Gather facts from Linux hosts
   hosts: 172.17.14.101
   gather_facts: yes
-  become: true
   tasks:
     - name: Print gathered facts
       debug:
