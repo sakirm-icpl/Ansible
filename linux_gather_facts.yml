@@ -1,6 +1,6 @@
 ---
 - name: Gather facts from Linux hosts
-  hosts: all
+  hosts: 172.17.14.101
   gather_facts: yes
 
   tasks:
