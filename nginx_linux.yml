@@ -1,18 +1,28 @@
 ---
 - name: Install Nginx on Ubuntu
   hosts: all
-  become: false
+  become: true
   tasks:
     - name: Update apt package cache
+      become: true
       apt:
         update_cache: yes
+      ignore_errors: yes
+
+    - name: Install python3-apt package (if missing)
+      become: true
+      apt:
+        name: python3-apt
+        state: present
 
     - name: Install Nginx
+      become: true
       apt:
         name: nginx
         state: present
 
     - name: Ensure Nginx is running and enabled
+      become: true
       service:
         name: nginx
         state: started
