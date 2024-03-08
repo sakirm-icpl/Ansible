@@ -1,0 +1,9 @@
+---
+- name: Gather facts from Linux hosts
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: Print gathered facts
+      debug:
+        var: ansible_facts
