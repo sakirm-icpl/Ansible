@@ -1,6 +1,6 @@
 ---
 - name: Install Nginx on Ubuntu
-  hosts: 172.17.14.101
+  hosts: Linux_Server
   become: true
   tasks:
     - name: Update apt package cache
