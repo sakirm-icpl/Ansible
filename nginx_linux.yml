@@ -1,7 +1,7 @@
 ---
 - name: Install Nginx on Ubuntu
   hosts: all
-  become: true
+  become: false
   tasks:
     - name: Update apt package cache
       apt:
