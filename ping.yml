@@ -1,6 +1,7 @@
 ---
 - name: Ping playbook
   hosts: all
+  become: false
   gather_facts: no
 
   tasks:
