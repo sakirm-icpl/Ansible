@@ -1,0 +1,7 @@
+- name: Ping Pong Playbook
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Ping the host
+      ping:
