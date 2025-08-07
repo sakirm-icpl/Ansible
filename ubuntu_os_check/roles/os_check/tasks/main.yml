@@ -1,0 +1,24 @@
+---
+# Main tasks for OS Check role
+# Ubuntu-specific OS checking
+
+- name: Include Ubuntu-specific tasks
+  include_tasks: ubuntu_check.yml
+  when: ansible_distribution == "Ubuntu"
+
+- name: Display OS Check Summary
+  debug:
+    msg: |
+      ========================================
+      UBUNTU OS CHECK SUMMARY
+      ========================================
+      Hostname: {{ ansible_hostname }}
+      Distribution: {{ ansible_distribution }}
+      Version: {{ ansible_distribution_version }}
+      Release: {{ ansible_distribution_release }}
+      Architecture: {{ ansible_architecture }}
+      Kernel: {{ ansible_kernel }}
+      ========================================
+  tags:
+    - os_check
+    - summary 

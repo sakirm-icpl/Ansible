@@ -1,0 +1,12 @@
+---
+# Host-specific variables for localhost
+# Ubuntu configuration
+
+ansible_connection: local
+ansible_python_interpreter: /usr/bin/python3
+
+# Ubuntu-specific host variables
+ubuntu_host_config:
+  hostname: "{{ ansible_hostname }}"
+  distribution: "Ubuntu"
+  expected_version: "22.04" 

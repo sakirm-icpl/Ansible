@@ -1,0 +1,21 @@
+---
+# Role metadata for OS Check
+galaxy_info:
+  author: Ansible Playbook
+  description: Ubuntu OS check role for validating system information
+  company: 
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - 20.04
+        - 22.04
+        - 24.04
+  galaxy_tags:
+    - system
+    - os_check
+    - ubuntu
+    - facts
+
+dependencies: [] 

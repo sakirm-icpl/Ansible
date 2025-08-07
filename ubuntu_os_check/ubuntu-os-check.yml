@@ -1,0 +1,16 @@
+---
+# Main Ubuntu OS Check Playbook
+# Checks Ubuntu operating system information on remote servers
+
+- name: Ubuntu OS Check Playbook
+  hosts: ubuntu_servers
+  gather_facts: true
+  become: false
+  
+  roles:
+    - os_check
+  
+  tags:
+    - os_check
+    - ubuntu
+    - system_info 

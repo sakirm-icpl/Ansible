@@ -1,0 +1,39 @@
+---
+# Ubuntu-specific OS check tasks
+
+- name: Validate Ubuntu Distribution
+  debug:
+    msg: "Ubuntu distribution detected: {{ ansible_distribution }} {{ ansible_distribution_version }}"
+  tags:
+    - os_check
+    - validation
+
+- name: Check Ubuntu Version Support
+  debug:
+    msg: "Ubuntu version {{ ansible_distribution_version }} is {{ 'supported' if ansible_distribution_version in supported_ubuntu_versions else 'not in supported list' }}"
+  tags:
+    - os_check
+    - validation
+
+- name: Set Ubuntu OS Check Result
+  set_fact:
+    ubuntu_os_result:
+      hostname: "{{ ansible_hostname }}"
+      distribution: "{{ ansible_distribution }}"
+      version: "{{ ansible_distribution_version }}"
+      release: "{{ ansible_distribution_release }}"
+      architecture: "{{ ansible_architecture }}"
+      kernel: "{{ ansible_kernel }}"
+      is_supported: "{{ ansible_distribution_version in supported_ubuntu_versions }}"
+      package_manager: "{{ ubuntu_settings.package_manager }}"
+      timestamp: "{{ ansible_date_time.iso8601 }}"
+  tags:
+    - os_check
+    - facts
+
+- name: Display Ubuntu OS Information
+  debug:
+    var: ubuntu_os_result
+  tags:
+    - os_check
+    - structured_output 

@@ -1,0 +1,17 @@
+---
+# Role-specific variables for OS Check
+# Ubuntu-focused configuration
+
+# Ubuntu distribution details
+ubuntu_info:
+  name: "Ubuntu"
+  package_manager: "apt"
+  config_dir: "/etc/apt"
+  sources_list: "/etc/apt/sources.list"
+
+# OS check parameters
+check_parameters:
+  validate_distribution: true
+  validate_version: true
+  check_architecture: true
+  check_kernel: true 

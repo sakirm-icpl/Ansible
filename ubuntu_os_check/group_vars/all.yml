@@ -1,0 +1,21 @@
+---
+# Global variables for all hosts
+# Ubuntu-specific configuration
+
+# Supported Ubuntu versions
+supported_ubuntu_versions:
+  - "20.04"
+  - "22.04"
+  - "24.04"
+
+# Ubuntu-specific settings
+ubuntu_settings:
+  package_manager: "apt"
+  update_cache: true
+  upgrade_packages: false
+
+# OS check configuration
+os_check_config:
+  gather_facts: true
+  validate_os: true
+  output_format: "detailed" 

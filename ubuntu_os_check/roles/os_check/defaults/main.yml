@@ -1,0 +1,18 @@
+---
+# Default variables for OS Check role
+# Ubuntu defaults
+
+# Default Ubuntu settings
+ubuntu_defaults:
+  supported_versions:
+    - "20.04"
+    - "22.04"
+    - "24.04"
+  package_manager: "apt"
+  update_cache: true
+
+# Default OS check settings
+os_check_defaults:
+  gather_facts: true
+  validate_os: true
+  output_format: "detailed" 

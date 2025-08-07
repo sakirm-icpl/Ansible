@@ -1,0 +1,16 @@
+---
+# Test connection to target server
+# Quick verification playbook
+
+- name: Test Connection to Target Server
+  hosts: ubuntu_servers
+  gather_facts: false
+  become: false
+  
+  tasks:
+    - name: Test ping connection
+      ping:
+      
+    - name: Display connection success
+      debug:
+        msg: "✅ Successfully connected to {{ inventory_hostname }} ({{ ansible_host }})" 

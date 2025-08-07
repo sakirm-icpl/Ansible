@@ -1,0 +1,8 @@
+---
+# Handlers for OS Check role
+# Ubuntu-specific handlers
+
+- name: restart os check service
+  debug:
+    msg: "OS check completed successfully"
+  listen: "os check completed" 

@@ -1,0 +1,15 @@
+---
+# Host-specific variables for target server
+# Server: 172.17.14.65
+
+ansible_host: 172.17.14.65
+ansible_user: sakir
+ansible_password: Admin123
+ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+ansible_python_interpreter: /usr/bin/python3
+
+# Ubuntu-specific host variables
+ubuntu_host_config:
+  hostname: "target-server"
+  distribution: "Ubuntu"
+  expected_version: "22.04" 
